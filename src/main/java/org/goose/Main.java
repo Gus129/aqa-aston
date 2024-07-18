@@ -238,9 +238,7 @@ public class Main {
 
     public static int[] generateArraySameValue(int len, int initialValue) {
         int[] a = new int[len];
-        for (int i = 0; i < len; i++) {
-            a[i] = initialValue;
-        }
+        Arrays.fill(a, initialValue);
         return a;
     }
 
