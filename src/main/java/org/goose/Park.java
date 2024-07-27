@@ -1,9 +1,27 @@
 package org.goose;
 
+import java.util.UUID;
+
 //3. Создать класс Park с внутренним классом, с помощью объектов которого можно хранить информацию об аттракционах, времени их работы и стоимости.
 public class Park {
+    private String id;
+    private String name;
+
+    public Park(String name) {
+        this.name = name;
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public class Attraction {
+        private String id;
         private String name;
         private String openingHours;
         private int ticketPrice;
@@ -12,6 +30,11 @@ public class Park {
             this.name = name;
             this.openingHours = openingHours;
             this.ticketPrice = ticketPrice;
+            this.id = UUID.randomUUID().toString();
+        }
+
+        public String getId() {
+            return id;
         }
 
         public String getName() {
@@ -30,7 +53,7 @@ public class Park {
             this.openingHours = openingHours;
         }
 
-        public double getTicketPrice() {
+        public int getTicketPrice() {
             return ticketPrice;
         }
 
@@ -41,7 +64,7 @@ public class Park {
         public void printFullInfo() {
             System.out.println("Название аттракциона: " + name + "\n"
                     + "Время работы: " + openingHours + "\n"
-                    + "Стоимость билета: " + ticketPrice + "\n");
+                    + "Стоимость билета: " + ticketPrice);
         }
     }
 }

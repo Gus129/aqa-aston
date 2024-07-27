@@ -12,5 +12,23 @@ public class Main {
         empArray[4] = new Employee("Dedov Ded", "Security", "dded@mailbox.com", "892312316", 2000, 64);
 
         empArray[3].printFullInfo();
+
+        Park disneyland = new Park("Диснейленд");
+        Park gorky = new Park("Парк Горького");
+
+        Park.Attraction rusRollercoaster = disneyland.new Attraction("Американские горки", "9:00 - 18:00", 250);
+        Park.Attraction usRollercoaster = gorky.new Attraction("Американские горки", "9:00 - 18:00", 250);
+
+        System.out.println("\n" + "Название парка: " + disneyland.getName());
+        System.out.println("ID: " + disneyland.getId());
+        rusRollercoaster.printFullInfo();
+
+        System.out.println("\n" + "Название парка: " + gorky.getName());
+        System.out.println("ID: " + gorky.getId());
+        usRollercoaster.printFullInfo();
+
+        rusRollercoaster.setName("Русские горки");
+        System.out.println(rusRollercoaster.getName());
+        System.out.println(usRollercoaster.getName());
     }
 }
