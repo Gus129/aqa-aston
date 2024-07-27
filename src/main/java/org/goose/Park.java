@@ -65,6 +65,7 @@ public class Park {
             System.out.println("Название аттракциона: " + name + "\n"
                     + "Время работы: " + openingHours + "\n"
                     + "Стоимость билета: " + ticketPrice);
+
         }
     }
 }
