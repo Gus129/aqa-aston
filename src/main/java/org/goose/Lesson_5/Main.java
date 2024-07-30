@@ -3,6 +3,7 @@ package org.goose.Lesson_5;
 public class Main {
 
     public static void main(String[] args) {
+
         //  2. Создать массив из 5 сотрудников.
         Employee[] empArray = new Employee[5];
         empArray[0] = new Employee("Ivanov Ivan", "Engineer", "ivivan@mailbox.com", "892312312", 30000, 30);
@@ -19,16 +20,28 @@ public class Main {
         Park.Attraction rusRollercoaster = disneyland.new Attraction("Американские горки", "9:00 - 18:00", 250);
         Park.Attraction usRollercoaster = gorky.new Attraction("Американские горки", "9:00 - 18:00", 250);
 
-        System.out.println("\n" + "Название парка: " + disneyland.getName());
-        System.out.println("ID: " + disneyland.getId());
-        rusRollercoaster.printFullInfo();
-
-        System.out.println("\n" + "Название парка: " + gorky.getName());
-        System.out.println("ID: " + gorky.getId());
-        usRollercoaster.printFullInfo();
+        disneyland.addAttraction(usRollercoaster);
+        gorky.addAttraction(rusRollercoaster);
+        gorky.addAttraction(usRollercoaster);
 
         rusRollercoaster.setName("Русские горки");
-        System.out.println(rusRollercoaster.getName());
-        System.out.println(usRollercoaster.getName());
+
+        printParkInfo(disneyland);
+        printParkInfo(gorky);
+
+        gorky.removeAttraction(rusRollercoaster.getId());
+        gorky.removeAttraction(usRollercoaster.getId());
+        printParkInfo(gorky);
     }
+
+    public static void printParkInfo(Park park) {
+        System.out.println("Название парка: " + park.getName());
+        System.out.println("ID: " + park.getId());
+        System.out.println("Аттракционы в парке: " + "\n");
+        for (Park.Attraction attraction : park.getAttractions()) {
+            attraction.printFullInfo();
+            System.out.println();
+        }
+    }
+
 }
