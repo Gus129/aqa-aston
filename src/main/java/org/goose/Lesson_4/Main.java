@@ -1,4 +1,4 @@
-package org.goose;
+package org.goose.Lesson_4;
 
 import java.util.Arrays;
 
