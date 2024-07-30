@@ -1,4 +1,4 @@
-package org.goose;
+package org.goose.Lesson_5;
 
 import java.util.UUID;
 
@@ -65,6 +65,7 @@ public class Park {
             System.out.println("Название аттракциона: " + name + "\n"
                     + "Время работы: " + openingHours + "\n"
                     + "Стоимость билета: " + ticketPrice);
+
         }
     }
 }

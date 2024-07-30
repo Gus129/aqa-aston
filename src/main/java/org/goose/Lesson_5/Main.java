@@ -1,4 +1,4 @@
-package org.goose;
+package org.goose.Lesson_5;
 
 public class Main {
 
