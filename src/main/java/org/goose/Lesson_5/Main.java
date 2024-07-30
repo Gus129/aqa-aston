@@ -1,7 +1,4 @@
-package org.goose;
-
-import org.goose.Lesson_5.Employee;
-import org.goose.Lesson_5.Park;
+package org.goose.Lesson_5;
 
 public class Main {
 
