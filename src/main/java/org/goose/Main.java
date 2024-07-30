@@ -1,5 +1,8 @@
 package org.goose;
 
+import org.goose.Lesson_5.Employee;
+import org.goose.Lesson_5.Park;
+
 public class Main {
 
     public static void main(String[] args) {
