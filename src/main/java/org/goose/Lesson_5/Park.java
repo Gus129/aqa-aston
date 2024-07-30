@@ -1,12 +1,17 @@
 package org.goose.Lesson_5;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 //3. Создать класс Park с внутренним классом, с помощью объектов которого можно хранить информацию об аттракционах, времени их работы и стоимости.
-public class Park {
+    public class Park {
+    @Getter
     private String id;
+    @Getter
     private String name;
     private List<Attraction> attractions;
 
@@ -14,14 +19,6 @@ public class Park {
         this.name = name;
         this.id = UUID.randomUUID().toString();
         this.attractions = new ArrayList<>();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void addAttraction(Attraction attraction) {
@@ -36,11 +33,14 @@ public class Park {
         return new ArrayList<>(attractions);
     }
 
-
+    @Getter
     public class Attraction {
         private String id;
+        @Setter
         private String name;
+        @Setter
         private String openingHours;
+        @Setter
         private int ticketPrice;
 
         public Attraction(String name, String openingHours, int ticketPrice) {
@@ -48,34 +48,6 @@ public class Park {
             this.openingHours = openingHours;
             this.ticketPrice = ticketPrice;
             this.id = UUID.randomUUID().toString();
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getOpeningHours() {
-            return openingHours;
-        }
-
-        public void setOpeningHours(String openingHours) {
-            this.openingHours = openingHours;
-        }
-
-        public int getTicketPrice() {
-            return ticketPrice;
-        }
-
-        public void setTicketPrice(int ticketPrice) {
-            this.ticketPrice = ticketPrice;
         }
 
         public void printFullInfo() {
