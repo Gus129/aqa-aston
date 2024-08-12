@@ -30,8 +30,8 @@ public class Main {
 
         System.out.println("*************************************");
         System.out.println("Количество животных: " + Animal.animalCount);
-        System.out.println("Количество котов: " + Cat.getCatCount());
-        System.out.println("Количество собак: " + Dog.getDogCount());
+        System.out.println("Количество котов: " + Cat.catCount);
+        System.out.println("Количество собак: " + Dog.dogCount);
         System.out.println("*************************************");
     }
 

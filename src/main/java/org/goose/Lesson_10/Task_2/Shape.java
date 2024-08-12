@@ -1,19 +1,17 @@
 package org.goose.Lesson_10.Task_2;
 
-public interface Shape {
-    double calculateArea();
-    double calculatePerimeter();
+public abstract class Shape implements CalcPerimeterAndArea {
 
-    String getFillColor();
-    String getBorderColor();
-    String getShapeType();
+    String fillColor;
+    String borderColor;
+    String shapeType;
 
-    default void printDetails() {
-        System.out.println("Фигура: " + getShapeType());
+    public void printDetails() {
+        System.out.println("Фигура: " + shapeType);
         System.out.println("Площадь: " + calculateArea());
         System.out.println("Периметр: " + calculatePerimeter());
-        System.out.println("Цвет заливки: " + getFillColor());
-        System.out.println("Цвет границы: " + getBorderColor());
+        System.out.println("Цвет заливки: " + fillColor);
+        System.out.println("Цвет границы: " + borderColor);
         System.out.println("*************************************");
     }
 }

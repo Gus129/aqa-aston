@@ -1,8 +1,8 @@
 package org.goose.Lesson_10.Task_1;
 
-abstract class Animal {
-    protected String name;
-    protected static int animalCount = 0;
+public abstract class Animal {
+    public String name;
+    public static int animalCount = 0;
 
     public Animal(String name) {
         this.name = name;
@@ -10,5 +10,6 @@ abstract class Animal {
     }
 
     public abstract void run(int distance);
+
     public abstract void swim(int distance);
 }

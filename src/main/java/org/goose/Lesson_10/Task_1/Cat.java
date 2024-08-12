@@ -1,7 +1,7 @@
 package org.goose.Lesson_10.Task_1;
 
 class Cat extends Animal {
-    private static int catCount = 0;
+    public static int catCount = 0;
     private int appetite;
     private boolean isFull = false;
 
@@ -26,7 +26,7 @@ class Cat extends Animal {
     }
 
     public void eat(Bowl bowl) {
-        int currentFoodAmount = bowl.getFoodAmount();
+        int currentFoodAmount = bowl.foodAmount;
         if (currentFoodAmount >= appetite) {
             bowl.decreaseFood(appetite);
             isFull = true;
@@ -38,10 +38,6 @@ class Cat extends Animal {
 
     public boolean isFull() {
         return isFull;
-    }
-
-    public static int getCatCount() {
-        return catCount;
     }
 }
 

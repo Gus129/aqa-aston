@@ -1,7 +1,7 @@
 package org.goose.Lesson_10.Task_1;
 
 public class Bowl {
-    private int foodAmount;
+    public int foodAmount;
 
     public Bowl(int foodAmount) {
         this.foodAmount = foodAmount;
@@ -20,11 +20,7 @@ public class Bowl {
         }
     }
 
-    public int getFoodAmount() {
-        return foodAmount;
-    }
-
     public void printFoodAmount() {
-        System.out.println("Еды в миске: " +foodAmount);;
+        System.out.println("Еды в миске: " + foodAmount);
     }
 }

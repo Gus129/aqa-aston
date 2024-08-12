@@ -1,7 +1,7 @@
 package org.goose.Lesson_10.Task_1;
 
 class Dog extends Animal {
-    private static int dogCount = 0;
+    public static int dogCount = 0;
 
     public Dog(String name) {
         super(name);
@@ -24,9 +24,5 @@ class Dog extends Animal {
         } else {
             System.out.println(name + " не может проплыть столько (" + distance + " м)");
         }
-    }
-
-    public static int getDogCount() {
-        return dogCount;
     }
 }

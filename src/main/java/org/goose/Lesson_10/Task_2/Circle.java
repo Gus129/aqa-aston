@@ -1,14 +1,13 @@
 package org.goose.Lesson_10.Task_2;
 
-public class Circle implements Shape {
+public class Circle extends Shape {
     private double radius;
-    private String fillColor;
-    private String borderColor;
 
     public Circle(double radius, String fillColor, String borderColor) {
         this.radius = radius;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
+        this.shapeType = "Круг";
     }
 
     @Override
@@ -19,20 +18,5 @@ public class Circle implements Shape {
     @Override
     public double calculatePerimeter() {
         return 2 * Math.PI * radius;
-    }
-
-    @Override
-    public String getFillColor() {
-        return fillColor;
-    }
-
-    @Override
-    public String getBorderColor() {
-        return borderColor;
-    }
-
-    @Override
-    public String getShapeType() {
-        return "Круг";
     }
 }
