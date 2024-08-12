@@ -9,7 +9,7 @@ public class Rectangle extends Shape {
         this.width = width;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
-        this.shapeType = "Прямоугольник";
+        this.shapeType = ShapeType.RECTANGLE;
     }
 
     @Override

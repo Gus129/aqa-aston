@@ -3,7 +3,7 @@ package org.goose.Lesson_10.Task_1;
 class Cat extends Animal {
     public static int catCount = 0;
     private int appetite;
-    private boolean isFull = false;
+    public boolean isFull = false;
 
     public Cat(String name, int appetite) {
         super(name);
@@ -34,10 +34,6 @@ class Cat extends Animal {
         } else {
             System.out.println(name + "у не хватает еды в миске. Он демонстративно не ест :)");
         }
-    }
-
-    public boolean isFull() {
-        return isFull;
     }
 }
 

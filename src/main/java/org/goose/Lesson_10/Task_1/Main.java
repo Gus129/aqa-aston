@@ -37,9 +37,10 @@ public class Main {
 
     private static void feedHungryCats(Cat[] cats, Bowl catBowl) {
         for (Cat cat : cats) {
-            if (!cat.isFull()) {
-            cat.eat(catBowl);
-            System.out.println(cat.name + " сыт: " + cat.isFull());}
+            if (!cat.isFull) {
+                cat.eat(catBowl);
+                System.out.println(cat.name + " сыт: " + cat.isFull);
+            }
         }
     }
 }

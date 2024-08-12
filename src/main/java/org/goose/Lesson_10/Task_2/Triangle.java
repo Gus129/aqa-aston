@@ -11,7 +11,7 @@ public class Triangle extends Shape {
         this.sideC = sideC;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
-        this.shapeType = "Треугольник";
+        this.shapeType = ShapeType.TRIANGLE;
     }
 
     @Override

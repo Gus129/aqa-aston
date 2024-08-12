@@ -7,7 +7,7 @@ public class Circle extends Shape {
         this.radius = radius;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
-        this.shapeType = "Круг";
+        this.shapeType = ShapeType.CIRCLE;
     }
 
     @Override
