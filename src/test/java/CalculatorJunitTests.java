@@ -31,4 +31,16 @@ public class CalculatorJunitTests {
             Calculator.factorial(-1);
         }, "Факториал отрицательного числа должен выбрасывать исключение IllegalArgumentException");
     }
+
+    @Test
+    void testNegativeCheckFactorialOfThree() {
+        BigInteger actualResult = Calculator.factorial(3);
+        BigInteger incorrectResult = BigInteger.valueOf(4);
+
+        if (!actualResult.equals(incorrectResult)) {
+            assertNotEquals(incorrectResult, actualResult, "!3 не должен быть равен 4");
+        } else {
+            fail("!3 волшебным образом вычислен как 4");
+        }
+    }
 }
