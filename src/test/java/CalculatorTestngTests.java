@@ -32,4 +32,16 @@ public class CalculatorTestngTests {
     public void testFactorialOfNegativeNumber() {
         Calculator.factorial(-1);
     }
+
+    @Test
+    void testNegativeFactorialOfThree() {
+        BigInteger actualResult = Calculator.factorial(3);
+        BigInteger incorrectResult = BigInteger.valueOf(4);
+
+        if (!actualResult.equals(incorrectResult)) {
+            assertNotEquals(incorrectResult, actualResult, "!3 не должен быть равен 4");
+        } else {
+            fail("!3 волшебным образом вычислен как 4");
+        }
+    }
 }
