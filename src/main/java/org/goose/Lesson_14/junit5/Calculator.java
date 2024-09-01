@@ -1,4 +1,4 @@
-package org.goose.Lesson_14.junit_5;
+package org.goose.Lesson_14.junit5;
 
 import java.math.BigInteger;
 

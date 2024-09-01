@@ -1,4 +1,4 @@
-import org.goose.Lesson_14.junit_5.Calculator;
+import org.goose.Lesson_14.junit5.Calculator;
 import org.junit.jupiter.api.Test;
 import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
