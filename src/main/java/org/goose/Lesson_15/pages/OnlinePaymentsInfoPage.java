@@ -10,10 +10,10 @@ public class OnlinePaymentsInfoPage extends BasePage {
         super(driver);
     }
 
-    public static final String onlinePaymentsInfoPageUrl = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
-    public static final String onlinePaymentsInfoPageTitle = "Порядок оплаты и безопасность интернет платежей";
+    public static final String ONLINE_PAYMENTS_INFO_PAGE_URL = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
+    public static final String ONLINE_PAYMENTS_INFO_PAGE_TITLE = "Порядок оплаты и безопасность интернет платежей";
 
-    public WebElement breadcrumbsList() {
+    public WebElement breadCrumbsList() {
         return driver.findElement(By.xpath("//*[@id='breadcrumbs']"));
     }
 }

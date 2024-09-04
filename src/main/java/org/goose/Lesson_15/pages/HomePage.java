@@ -10,12 +10,8 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public static final String homePageUrl = "https://www.mts.by/";
-    public static final String homePageTitle = "МТС – мобильный оператор в Беларуси";
-
-    public WebElement homePageLogo() {
-        return driver.findElement(By.xpath("//a[contains(@class, 'page-header__logo')]"));
-    }
+    public static final String HOME_PAGE_URL = "https://www.mts.by/";
+    public static final String HOME_PAGE_TITLE = "МТС – мобильный оператор в Беларуси";
 
     public WebElement onlinePaymentsLabel() {
         return driver.findElement(By.xpath("//*[@id='pay-section']//h2[contains(text(), 'Онлайн пополнение')]"));

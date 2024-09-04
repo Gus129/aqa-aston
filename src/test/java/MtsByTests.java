@@ -35,24 +35,24 @@ public class MtsByTests {
     }
 
     @AfterEach
-    public void teardown() {
+    public void tearDown() {
         driver.quit();
     }
 
     @DisplayName("Загрузка домашней страницы")
     @Test
     public void checkHomePageAppearCorrect() {
-        homePage.open(homePageUrl);
-        homePage.assertPageLoaded(homePageUrl);
-        homePage.verifyTitle(homePageTitle);
+        homePage.open(HOME_PAGE_URL);
+        homePage.assertPageLoaded(HOME_PAGE_URL);
+        homePage.verifyTitle(HOME_PAGE_TITLE);
     }
 
     @DisplayName("Блок оплаты имеет label с текстом 'Онлайн пополнение без комиссии'")
     @Test
     public void checkOnlinePaymentsLabelText() {
-        homePage.open(homePageUrl);
-        homePage.assertPageLoaded(homePageUrl);
-        homePage.verifyTitle(homePageTitle);
+        homePage.open(HOME_PAGE_URL);
+        homePage.assertPageLoaded(HOME_PAGE_URL);
+        homePage.verifyTitle(HOME_PAGE_TITLE);
         homePage.declineCookies();
         homePage.waitElementIsVisible(homePage.onlinePaymentsLabel());
         homePage.verifyElementTextContent(homePage.onlinePaymentsLabel(), "Онлайн пополнение без комиссии");
@@ -61,9 +61,9 @@ public class MtsByTests {
     @DisplayName("Наличие логотипов платёжных систем")
     @Test
     public void checkPaymentsLogosIsPresent() {
-        homePage.open(homePageUrl);
-        homePage.assertPageLoaded(homePageUrl);
-        homePage.verifyTitle(homePageTitle);
+        homePage.open(HOME_PAGE_URL);
+        homePage.assertPageLoaded(HOME_PAGE_URL);
+        homePage.verifyTitle(HOME_PAGE_TITLE);
         homePage.declineCookies();
         homePage.waitElementIsVisible(homePage.visaLogo());
         assertAll(
@@ -78,23 +78,23 @@ public class MtsByTests {
     @DisplayName("Cсылка «Подробнее о сервисе» открывает ожидаемую страницу")
     @Test
     public void checkMoreDetailsAboutServiceLinkIsCorrect() {
-        homePage.open(homePageUrl);
-        homePage.assertPageLoaded(homePageUrl);
-        homePage.verifyTitle(homePageTitle);
+        homePage.open(HOME_PAGE_URL);
+        homePage.assertPageLoaded(HOME_PAGE_URL);
+        homePage.verifyTitle(HOME_PAGE_TITLE);
         homePage.declineCookies();
         homePage.waitElementIsVisible(homePage.moreDetailsAboutServiceLink());
         homePage.moreDetailsAboutServiceLink().click();
-        onlinePaymentsInfoPage.assertPageLoaded(onlinePaymentsInfoPageUrl);
-        onlinePaymentsInfoPage.verifyTitle(onlinePaymentsInfoPageTitle);
-        onlinePaymentsInfoPage.verifyElementTextContent(onlinePaymentsInfoPage.breadcrumbsList(), "Порядок оплаты и безопасность интернет платежей");
+        onlinePaymentsInfoPage.assertPageLoaded(ONLINE_PAYMENTS_INFO_PAGE_URL);
+        onlinePaymentsInfoPage.verifyTitle(ONLINE_PAYMENTS_INFO_PAGE_TITLE);
+        onlinePaymentsInfoPage.verifyElementTextContent(onlinePaymentsInfoPage.breadCrumbsList(), "Порядок оплаты и безопасность интернет платежей");
     }
 
     @DisplayName("Кнопка 'Продолжить' при заполненной форме 'Услуги связи' где номер '297777777' открывает мини-форму со следующим шагом оплаты")
     @Test
     public void checkCommunicationServicesContinueClickIsCorrect() {
-        homePage.open(homePageUrl);
-        homePage.assertPageLoaded(homePageUrl);
-        homePage.verifyTitle(homePageTitle);
+        homePage.open(HOME_PAGE_URL);
+        homePage.assertPageLoaded(HOME_PAGE_URL);
+        homePage.verifyTitle(HOME_PAGE_TITLE);
         homePage.declineCookies();
         homePage.waitElementIsVisible(homePage.phoneNumberInput());
         homePage.phoneNumberInput().click();
