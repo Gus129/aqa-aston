@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.goose.Lesson_15.common.Config.EXPLICIT_WAIT;
 
 public abstract class BasePage {
+
     public final WebDriver driver;
 
     public BasePage(WebDriver driver) {
@@ -18,6 +19,12 @@ public abstract class BasePage {
     public WebElement waitElementIsVisible(WebElement element) {
         Wait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
         wait.until(ExpectedConditions.visibilityOf(element));
+        return element;
+    }
+
+    public WebElement waitElementIsClickable(WebElement element) {
+        Wait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         return element;
     }
 
@@ -38,6 +45,11 @@ public abstract class BasePage {
         driver.navigate().to(url);
     }
 
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView();", element);
+    }
+
     public void verifyTitle(String pageTitle) {
         assertEquals(pageTitle, driver.getTitle(), "Title cтраницы не соответствует ожидаемому");
     }
@@ -47,7 +59,12 @@ public abstract class BasePage {
         assertTrue(actualElementTextContent.contains(containedText), "Ожидаемый текст '" + containedText + "' не найден");
     }
 
+    public void verifyElementPlaceholderTextContent(WebElement inputElement, String placeholderText) {
+        String actualElementTextContent = inputElement.getAttribute("placeholder");
+        assertTrue(actualElementTextContent.contains(placeholderText), "Ожидаемый текст '" + placeholderText + "' не найден");
+    }
+
     public void assertElementIsDisplayed(WebElement element) {
-        assertTrue(element.isDisplayed(), "Элемент не найден");
+        assertTrue(element.isDisplayed(), "Элемент не найден, его xpath: '" + element + "'\n");
     }
 }
